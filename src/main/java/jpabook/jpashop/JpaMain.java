@@ -1,6 +1,7 @@
 package jpabook.jpashop;
 
 import hellojpa.Member;
+import hellojpa.Team;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

@@ -10,12 +10,22 @@ public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "MEMBER_ID")
+    private Long id;
 
-    @Column(name = "name")
-
+    @Column(name = "USERNAME")
     private String username;
 
+    @Column(name = "TEAM_ID")
+    private Long teamId;
+
+    public Long getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(Long teamId) {
+        this.teamId = teamId;
+    }
 
     public String getUsername() {
         return username;
