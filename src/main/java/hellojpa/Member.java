@@ -9,22 +9,32 @@ import java.util.Date;
 public class Member {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "MEMBER_ID")
     private Long id;
 
     @Column(name = "USERNAME")
     private String username;
 
-    @Column(name = "TEAM_ID")
-    private Long teamId;
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
 
-    public Long getTeamId() {
-        return teamId;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setTeamId(Long teamId) {
-        this.teamId = teamId;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
     }
 
     public String getUsername() {
