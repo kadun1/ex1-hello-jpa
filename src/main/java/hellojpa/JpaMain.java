@@ -16,6 +16,7 @@ public class JpaMain {
         tx.begin();
 
         try {
+
             //저장
             Team team = new Team();
             team.setName("TeamA");
