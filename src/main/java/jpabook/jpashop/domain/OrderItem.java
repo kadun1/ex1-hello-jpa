@@ -4,7 +4,7 @@ import org.omg.CORBA.PRIVATE_MEMBER;
 
 import javax.persistence.*;
 
-//@Entity
+@Entity
 public class OrderItem {
 
     @Id @GeneratedValue
