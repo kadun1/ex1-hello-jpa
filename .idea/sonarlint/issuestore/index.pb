@@ -9,3 +9,13 @@ R
 "src/main/java/hellojpa/Member.java,f\d\fd68fd8c0388b07c61445afa503c8ec018eab4c0
 S
 #src/main/java/hellojpa/Product.java,7\1\717b091188e01e3e76c32796a05a5f0b7e165ec4
+Y
+)src/main/java/hellojpa/MemberProduct.java,4\4\44c1b4a465ff3c033de64e5c746bd23b1c60bd17
+R
+"src/main/java/hellojpa/Locker.java,4\7\4746643b525b7683f7bd87c9f4f12112f1a6193f
+P
+ src/main/java/hellojpa/Book.java,4\0\40e311ccbf52f9df9ec4629134747136c70691af
+Q
+!src/main/java/hellojpa/Movie.java,5\d\5d01fa8f7a9d9e79f69c3c4484557bbb877c2f6f
+S
+#src/main/java/hellojpa/JpaMain.java,3\8\3818751ba7a7e2bbfde51b6c3126a02f97f5a644
