@@ -19,3 +19,13 @@ Q
 !src/main/java/hellojpa/Movie.java,5\d\5d01fa8f7a9d9e79f69c3c4484557bbb877c2f6f
 S
 #src/main/java/hellojpa/JpaMain.java,3\8\3818751ba7a7e2bbfde51b6c3126a02f97f5a644
+Q
+!src/main/java/hellojpa/Album.java,d\5\d51633f288f6c9e54960bf8cc2765c46f749ce95
+c
+3src/main/java/jpabook/jpashop/domain/OrderItem.java,5\f\5ff98ff609f00aa390c3badb12b283b172996795
+_
+/src/main/java/jpabook/jpashop/domain/Order.java,b\e\be11ca5f753c33204b340512509491ae2239cb4b
+b
+2src/main/java/jpabook/jpashop/domain/Delivery.java,0\1\0174c94bd295bce4393b7f942a684752d1cf5e6a
+P
+ src/main/java/hellojpa/Item.java,9\7\978a85b417eb31c6aef1282acb782910acfded2c
