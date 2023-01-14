@@ -29,6 +29,10 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<MemberProduct> memberProducts = new ArrayList<>();
 
+    public Team getTeam() {
+        return team;
+    }
+
     public Long getId() {
         return id;
     }

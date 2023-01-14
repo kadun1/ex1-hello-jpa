@@ -19,6 +19,9 @@ public class JpaMain {
 
         try {
 
+            Team team = new Team();
+            team.setName("teamA");
+
             Member member1 = new Member();
             member1.setUsername("hello");
 
@@ -27,9 +30,9 @@ public class JpaMain {
             em.flush();
             em.clear();
 
-            Member refMember = em.getReference(Member.class, member1.getId());
-            System.out.println("refMember = " + refMember.getClass());
-            Hibernate.initialize(refMember); // 강제 초기화
+            Member m = em.find(Member.class, member1.getId());
+
+            System.out.println("m = "+m.getTeam().getClass());
 
             tx.commit();
         } catch (Exception e) {
