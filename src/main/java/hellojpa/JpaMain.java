@@ -1,5 +1,7 @@
 package hellojpa;
 
+import org.hibernate.Hibernate;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -17,19 +19,18 @@ public class JpaMain {
 
         try {
 
-            Movie movie = new Movie();
-            movie.setDirector("aaa");
-            movie.setActor("bbb");
-            movie.setName("Gone");
-            movie.setPrice(1000);
+            Member member1 = new Member();
+            member1.setUsername("hello");
 
-            em.persist(movie);
+            em.persist(member1);
 
             em.flush();
             em.clear();
 
-            Movie findMovie = em.find(Movie.class, movie.getId());
-            System.out.println("findMovie = " + findMovie);
+            Member refMember = em.getReference(Member.class, member1.getId());
+            System.out.println("refMember = " + refMember.getClass());
+            Hibernate.initialize(refMember); // 강제 초기화
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
