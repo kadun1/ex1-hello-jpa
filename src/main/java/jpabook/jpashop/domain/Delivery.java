@@ -10,11 +10,18 @@ public class Delivery {
     @Id @GeneratedValue
     private Long id;
 
-    private String city;
-    private String street;
-    private String zipcode;
+    @Embedded
+    private Address address;
     private DeliveryStatus status;
 
     @OneToOne(mappedBy = "delivery", fetch = LAZY)
     private Order order;
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 }
