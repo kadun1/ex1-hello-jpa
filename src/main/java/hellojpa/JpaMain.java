@@ -19,25 +19,40 @@ public class JpaMain {
 
         try {
 
-            Address address = new Address("city", "street", "zipcode");
+           Member member = new Member();
+           member.setUsername("member1");
+           member.setHomeAddress(new Address("city1", "street", "10000"));
 
-            Member member = new Member();
-            member.setUsername("hello");
-            member.setHomeAddress(address);
-            member.setWorkPeriod(new Period());
+           member.getFavoriteFoods().add("치킨");
+           member.getFavoriteFoods().add("족발");
+           member.getFavoriteFoods().add("피자");
 
-            em.persist(member);
+           member.getAddressHistory().add(new Address("old1", "street", "10000"));
+           member.getAddressHistory().add(new Address("old2", "street", "10000"));
 
-            Address copyAddress = new Address(address.getCity(), address.getStreet(), address.getZipcode());
+           em.persist(member);
 
-            Member member2 = new Member();
-            member2.setUsername("hello2");
-            member2.setHomeAddress(copyAddress);
-            member2.setWorkPeriod(new Period());
+           em.flush();
+           em.clear();
 
-            em.persist(member2);
+            System.out.println("==== start ====");
+            Member findMember = em.find(Member.class, member.getId());
 
-            member2.getHomeAddress().setCity("newCity");
+            //homeCity -> newCity
+//            findMember.getHomeAddress().setCity("newCity"); // 이렇게 하면 안된다.
+
+            Address oldAddress = findMember.getHomeAddress();
+            findMember.setHomeAddress(new Address("newCity", oldAddress.getStreet(), oldAddress.getZipcode())); // 이렇게 해야함
+
+            //값 타입 컬렉션에서 변환
+            //치킨 -> 한식
+            findMember.getFavoriteFoods().remove("치킨");
+            findMember.getFavoriteFoods().add("한식");
+
+            findMember.getAddressHistory().remove(new Address("old1", "street", "10000"));
+            findMember.getAddressHistory().add(new Address("newCity1", "street", "10000"));
+
+
 
             tx.commit();
         } catch (Exception e) {
