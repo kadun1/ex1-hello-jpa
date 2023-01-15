@@ -9,8 +9,6 @@ S
 #src/main/java/hellojpa/Product.java,7\1\717b091188e01e3e76c32796a05a5f0b7e165ec4
 Y
 )src/main/java/hellojpa/MemberProduct.java,4\4\44c1b4a465ff3c033de64e5c746bd23b1c60bd17
-R
-"src/main/java/hellojpa/Locker.java,4\7\4746643b525b7683f7bd87c9f4f12112f1a6193f
 P
  src/main/java/hellojpa/Book.java,4\0\40e311ccbf52f9df9ec4629134747136c70691af
 Q
@@ -19,3 +17,15 @@ Q
 !src/main/java/hellojpa/Album.java,d\5\d51633f288f6c9e54960bf8cc2765c46f749ce95
 P
  src/main/java/hellojpa/Item.java,9\7\978a85b417eb31c6aef1282acb782910acfded2c
+_
+/src/main/java/jpabook/jpashop/domain/Album.java,1\0\10194f4a27faa1838f4738f4d4443e92baa63401
+^
+.src/main/java/jpabook/jpashop/domain/Book.java,a\5\a5d2547942c6582321fb3a70f0ba877df95037b6
+d
+4src/main/java/jpabook/jpashop/domain/BaseEntity.java,e\7\e73d1ae5747079484e4207fbea913c358e3e6b06
+Z
+*src/main/java/jpabook/jpashop/JpaMain.java,d\8\d8078389fd62838fd61e9a23df1bf84f0a19134a
+Q
+!src/main/java/hellojpa/Child.java,4\8\48d6c9fed6f1a2e54a6a3560ffb4d0f8d7b9aa18
+R
+"src/main/java/hellojpa/Parent.java,4\4\44edf2283231ef941ed7d9f231ed01b376d49e57
