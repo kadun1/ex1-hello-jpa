@@ -6,6 +6,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class JpaMain {
@@ -18,39 +21,25 @@ public class JpaMain {
         tx.begin();
 
         try {
+            //jpa query
+            List<Member> result = em.createQuery(
+                    "select m From Member m where m.username like '%kim%'",
+                    Member.class
+            ).getResultList();
 
-           Member member = new Member();
-           member.setUsername("member1");
-           member.setHomeAddress(new Address("city1", "street", "10000"));
+            //criteria
+            CriteriaBuilder cb = em.getCriteriaBuilder();
+            CriteriaQuery<Member> query = cb.createQuery(Member.class);
+            Root<Member> m = query.from(Member.class);
 
-           member.getFavoriteFoods().add("치킨");
-           member.getFavoriteFoods().add("족발");
-           member.getFavoriteFoods().add("피자");
+            CriteriaQuery<Member> cq = query.select(m);
 
-           member.getAddressHistory().add(new AddressEntity("old1", "street", "10000"));
-           member.getAddressHistory().add(new AddressEntity("old2", "street", "10000"));
+            String username = "asdf";
+            if (username != null) {
+                cq = cq.where(cb.equal(m.get("username"), "kim"));
+            }
 
-           em.persist(member);
-
-           em.flush();
-           em.clear();
-
-            System.out.println("==== start ====");
-            Member findMember = em.find(Member.class, member.getId());
-
-            //homeCity -> newCity
-//            findMember.getHomeAddress().setCity("newCity"); // 이렇게 하면 안된다.
-
-            Address oldAddress = findMember.getHomeAddress();
-            findMember.setHomeAddress(new Address("newCity", oldAddress.getStreet(), oldAddress.getZipcode())); // 이렇게 해야함
-
-            //값 타입 컬렉션에서 변환
-            //치킨 -> 한식
-            findMember.getFavoriteFoods().remove("치킨");
-            findMember.getFavoriteFoods().add("한식");
-
-            findMember.getAddressHistory().remove(new Address("old1", "street", "10000"));
-//            findMember.getAddressHistory().add(new Address("newCity1", "street", "10000"));
+            List<Member> resultList = em.createQuery(cq).getResultList();
 
             tx.commit();
 

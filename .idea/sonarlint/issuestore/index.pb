@@ -29,3 +29,17 @@ Q
 !src/main/java/hellojpa/Child.java,4\8\48d6c9fed6f1a2e54a6a3560ffb4d0f8d7b9aa18
 R
 "src/main/java/hellojpa/Parent.java,4\4\44edf2283231ef941ed7d9f231ed01b376d49e57
+R
+"src/main/java/hellojpa/Period.java,a\0\a0b3136a164e8bbec40efc2281f122de4175ab86
+e
+5src/main/java/jpabook/jpashop/domain/OrderStatus.java,6\2\6263648f9b5a55943c09d979922e8aaebe8b7604
+h
+8src/main/java/jpabook/jpashop/domain/DeliveryStatus.java,6\4\6464ee3d83fa647e1d123f78966b78d76ef25236
+S
+#src/main/java/hellojpa/Address.java,e\d\ed0ba483127da0c1ee616e1633db429d81762845
+^
+.src/main/java/jpabook/jpashop/domain/Item.java,6\0\60e3c8697fd0b451189ded1f0935445468acce54
+R
+"src/main/java/hellojpa/Member.java,f\d\fd68fd8c0388b07c61445afa503c8ec018eab4c0
+Y
+)src/main/java/hellojpa/AddressEntity.java,2\8\288dd2a061bd2aef4a50d3ec6f052bc0991950b2
