@@ -10,7 +10,7 @@ import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.*;
 
 //@Entity
-@Table(name = "ORDERS")
+//@Table(name = "ORDERS")
 public class Order {
 
     @Id @GeneratedValue
